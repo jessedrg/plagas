@@ -42,7 +42,14 @@ const services = [
     title: "Desinfección",
     desc: "Desinfección profesional de locales, oficinas y comunidades. Certificado incluido.",
     img: "https://images.unsplash.com/photo-1636791013127-37effd526316?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    span: "md:col-span-2",
+    span: "",
+  },
+  {
+    id: "certificado-control-plagas",
+    title: "Certificados oficiales",
+    desc: "Certificados DDD: desinsectación, desratización, desinfección. Informes detallados en 24-48h. Empresas registradas.",
+    img: "https://images.unsplash.com/photo-1644576854212-2d1e383888eb?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    span: "",
   },
 ]
 

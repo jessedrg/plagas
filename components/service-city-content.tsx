@@ -10,17 +10,18 @@ const PHONE = "+34603389026"
 
 const SERVICE_IMAGES: Record<string, string> = {
   "desratizacion": "https://images.unsplash.com/photo-1548767797-d8c844163c4c?q=80&w=2071&auto=format&fit=crop",
-  "desinsectacion": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop",
-  "fumigacion": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070&auto=format&fit=crop",
+  "desinsectacion": "https://images.unsplash.com/photo-1636791013127-37effd526316?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "fumigacion": "https://images.unsplash.com/photo-1636791013127-37effd526316?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "control-cucarachas": "https://images.unsplash.com/photo-1701554193871-a605f56e3005?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "control-termitas": "https://images.unsplash.com/photo-1540854114405-7f108634a897?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "control-chinches": "https://images.unsplash.com/photo-1681695749552-71e397581267?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "eliminar-avispas": "https://images.unsplash.com/photo-1662886444247-3a3c54303239?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "control-hormigas": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop",
-  "control-pulgas": "https://images.unsplash.com/photo-1548767797-d8c844163c4c?q=80&w=2071&auto=format&fit=crop",
-  "control-mosquitos": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070&auto=format&fit=crop",
-  "control-palomas": "https://images.unsplash.com/photo-1568526381923-caf3fd520382?q=80&w=2069&auto=format&fit=crop",
+  "control-hormigas": "https://images.unsplash.com/photo-1611748939902-060e1ae99f32?q=80&w=2014&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "control-pulgas": "https://images.unsplash.com/photo-1584709636716-3293bcc4517d?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "control-mosquitos": "https://images.unsplash.com/photo-1584709636716-3293bcc4517d?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "control-palomas": "https://images.unsplash.com/photo-1572262086204-3909bfc93ea0?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "desinfeccion": "https://images.unsplash.com/photo-1636791013127-37effd526316?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "certificado-control-plagas": "https://images.unsplash.com/photo-1644576854212-2d1e383888eb?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 }
 
 function hashCode(str: string): number {
@@ -37,14 +38,72 @@ function generateReviews(cityName: string, serviceId: string) {
   const seed = hashCode(`${cityName}-${serviceId}`)
   const names = ["Maria L.", "Carlos G.", "Ana R.", "Javier M.", "Elena S.", "Roberto P.", "Patricia D.", "Fernando T.", "Laura B.", "Sergio V."]
 
-  const templates = [
-    `Teniamos ${serviceId.includes("rata") ? "ratas" : serviceId.includes("cucaracha") ? "cucarachas" : "una plaga"} en casa y no sabiamos que hacer. plagas nos conecto con un exterminador en ${cityName} en menos de 24h. Problema resuelto en una semana. Servicio impecable.`,
-    `Pensabamos que tendriamos que tirar muebles. El profesional que nos envio plagas en ${cityName} hizo un tratamiento increible. Cero plagas desde entonces. Muy recomendable.`,
-    `Urgencia total en el restaurante. plagas nos consiguio un exterminador certificado en ${cityName} el mismo dia. Tratamiento profesional sin cerrar el local. Perfecto.`,
-    `El exterminador de ${cityName} fue muy profesional. Explico todo el proceso, dio garantia por escrito y el precio fue justo. Muy contento con plagas.`,
-    `Segunda vez que uso plagas en ${cityName}. La primera vez fue tan bien que no dude en repetir. Servicio rapido, profesional y con garantia.`,
-    `Tenia miedo de los productos quimicos por mis hijos. El profesional de ${cityName} uso tratamiento seguro y me explico todo. Plaga eliminada sin riesgos.`,
-  ]
+  let templates: string[] = []
+  
+  if (serviceId.includes("rata") || serviceId === "desratizacion") {
+    templates = [
+      `Teniamos ratas en el garaje y no sabiamos que hacer. plagas nos conecto con un exterminador en ${cityName} en menos de 24h. En una semana, cero ratas. Servicio impecable.`,
+      `Ruidos en el techo por la noche, eran ratones. El profesional de ${cityName} puso cebos y en 10 dias desaparecieron. Muy profesional y con garantia.`,
+      `Ratas en el restaurante, urgencia total. plagas nos consiguio un exterminador certificado en ${cityName} el mismo dia. Tratamiento discreto sin cerrar el local.`,
+      `El exterminador de ${cityName} encontro por donde entraban las ratas y sello todo. Tratamiento completo con seguimiento. Muy contento.`,
+      `Segunda vez que uso plagas en ${cityName} para desratizacion. Servicio rapido, profesional y con garantia por escrito.`,
+      `Tenia miedo por mis mascotas. El profesional de ${cityName} uso estaciones de cebo cerradas, totalmente seguras. Ratas eliminadas sin riesgos.`,
+    ]
+  } else if (serviceId.includes("cucaracha")) {
+    templates = [
+      `Cucarachas en la cocina, no podia mas. plagas me conecto con un exterminador en ${cityName} que uso gel profesional. En 2 semanas, cero cucarachas.`,
+      `Pensaba que tendria que fumigar todo el piso. El tratamiento con gel en ${cityName} fue limpio, sin olores y muy efectivo. Recomendado.`,
+      `Cucarachas en el bar, inspeccion de sanidad encima. plagas me salvo con un exterminador urgente en ${cityName}. Tratamiento y certificado en 24h.`,
+      `El profesional de ${cityName} explico que las cucarachas venian por las tuberias. Tratamiento en cocina y banos, problema resuelto.`,
+      `Llevaba meses con cucarachas pequenas. El exterminador de ${cityName} identifico que era cucaracha alemana y aplico tratamiento especifico. Perfecto.`,
+      `Tenia miedo de los sprays por mis hijos. El gel profesional que usaron en ${cityName} es seguro y muy efectivo. Muy tranquila ahora.`,
+    ]
+  } else if (serviceId.includes("chinche")) {
+    templates = [
+      `Chinches en el colchon despues de un viaje. Pensaba que tendria que tirarlo todo. El tratamiento termico en ${cityName} lo soluciono sin daniar nada.`,
+      `Picaduras cada noche, eran chinches. El exterminador de ${cityName} hizo inspeccion completa y tratamiento en una sola sesion. Increible.`,
+      `Hotel con chinches, emergencia total. plagas nos consiguio tratamiento urgente en ${cityName}. Habitaciones listas en 48h con certificado.`,
+      `El profesional de ${cityName} encontro chinches en el sofa, no solo en la cama. Tratamiento completo con seguimiento. Muy profesional.`,
+      `Piso de alquiler con chinches del inquilino anterior. El exterminador de ${cityName} lo soluciono con garantia. Ahora puedo dormir tranquilo.`,
+      `Tenia miedo de los productos quimicos. El tratamiento termico en ${cityName} es 100% seguro y elimina chinches en todas las fases.`,
+    ]
+  } else if (serviceId.includes("termita")) {
+    templates = [
+      `Termitas en las vigas del salon. Pensaba que era el fin de la casa. El tratamiento en ${cityName} fue limpio y con 5 anos de garantia.`,
+      `Serrin en el suelo cerca de los muebles. El exterminador de ${cityName} confirmo termitas y aplico tratamiento inyectado. Madera salvada.`,
+      `Carcoma en el parquet, se estaba hundiendo. El profesional de ${cityName} trato toda la madera y quedo como nuevo. Muy recomendable.`,
+      `El exterminador de ${cityName} hizo inspeccion con camara termica y encontro el foco. Tratamiento preciso sin obras. Excelente.`,
+      `Termitas en el marco de la puerta. Actuamos a tiempo gracias al exterminador de ${cityName}. Tratamiento preventivo en toda la casa.`,
+      `Tenia miedo de que hubiera que cambiar vigas. El tratamiento en ${cityName} las salvo todas. Garantia de 5 anos incluida.`,
+    ]
+  } else if (serviceId.includes("avispa")) {
+    templates = [
+      `Nido de avispas en el tejado. Mis hijos no podian salir al jardin. El exterminador de ${cityName} lo retiro en 30 minutos. Profesional.`,
+      `Avispas en la persiana, entraban en casa. Servicio urgente en ${cityName}, vinieron en 2 horas y problema resuelto.`,
+      `Avispa asiatica en el jardin. El profesional de ${cityName} retiro el nido con equipo especial. Muy peligroso hacerlo solo.`,
+      `Nido enorme en el aire acondicionado. El exterminador de ${cityName} lo quito sin daniar el aparato. Servicio impecable.`,
+      `Avispas en la fachada del restaurante. plagas nos consiguio servicio urgente en ${cityName}. Retirada discreta sin asustar clientes.`,
+      `Intente quitar el nido yo mismo y me picaron. El profesional de ${cityName} lo hizo en minutos con total seguridad. Leccion aprendida.`,
+    ]
+  } else if (serviceId.includes("certificado")) {
+    templates = [
+      `Necesitaba certificado DDD urgente para inspeccion de sanidad. plagas me lo consiguio en ${cityName} en 24 horas. Inspeccion superada.`,
+      `Certificado de desratizacion para el restaurante. Servicio rapido en ${cityName}, tratamiento y certificado en el mismo dia.`,
+      `Abri un bar y necesitaba certificado de control de plagas. El servicio en ${cityName} fue profesional y el certificado llego al dia siguiente.`,
+      `Certificado para la comunidad de vecinos. El exterminador de ${cityName} hizo tratamiento completo y nos dio informe detallado.`,
+      `Inspeccion de sanidad en 3 dias y no tenia certificado. plagas me salvo con servicio urgente en ${cityName}. Todo en regla.`,
+      `Certificado DDD para guarderia. El profesional de ${cityName} uso productos seguros para ninos y nos dio toda la documentacion.`,
+    ]
+  } else {
+    templates = [
+      `Teniamos una plaga en casa y no sabiamos que hacer. plagas nos conecto con un exterminador en ${cityName} en menos de 24h. Problema resuelto. Servicio impecable.`,
+      `Pensabamos que tendriamos que tirar muebles. El profesional de ${cityName} hizo un tratamiento increible. Cero plagas desde entonces. Muy recomendable.`,
+      `Urgencia total en el negocio. plagas nos consiguio un exterminador certificado en ${cityName} el mismo dia. Tratamiento profesional. Perfecto.`,
+      `El exterminador de ${cityName} fue muy profesional. Explico todo el proceso, dio garantia por escrito y el precio fue justo. Muy contento.`,
+      `Segunda vez que uso plagas en ${cityName}. La primera vez fue tan bien que no dude en repetir. Servicio rapido, profesional y con garantia.`,
+      `Tenia miedo de los productos quimicos por mis hijos. El profesional de ${cityName} uso tratamiento seguro y me explico todo. Plaga eliminada sin riesgos.`,
+    ]
+  }
 
   const startIdx = seed % templates.length
   return Array.from({ length: 6 }, (_, i) => ({
@@ -76,8 +135,49 @@ function generateFAQs(cityName: string, serviceName: { title: string; singular: 
     )
   } else if (serviceId.includes("chinche")) {
     faqs.push(
-      { q: "Como se si tengo chinches de cama?", a: "Senales: picaduras en linea o grupo al despertar, manchas de sangre en sabanas, puntos negros en costuras del colchon, olor dulzon. Si sospechas chinches en ${cityName}, actua rapido: se reproducen muy deprisa." },
+      { q: "Como se si tengo chinches de cama?", a: `Senales: picaduras en linea o grupo al despertar, manchas de sangre en sabanas, puntos negros en costuras del colchon, olor dulzon. Si sospechas chinches en ${cityName}, actua rapido: se reproducen muy deprisa.` },
       { q: "Tengo que tirar el colchon?", a: "No necesariamente. El tratamiento termico profesional elimina chinches en todas las fases sin daniar el colchon. Solo en casos muy graves se recomienda sustituirlo." },
+    )
+  } else if (serviceId.includes("termita") || serviceId.includes("carcoma")) {
+    faqs.push(
+      { q: "Como se si tengo termitas?", a: `Senales: pequenos agujeros en la madera, serrin fino cerca de muebles o vigas, madera que suena hueca al golpear, alas de termitas en ventanas. Si detectas alguna senal en ${cityName}, solicita inspeccion profesional urgente.` },
+      { q: "El tratamiento de termitas es caro?", a: `El precio depende de la extension de la plaga y el tipo de madera afectada. En ${cityName}, tratamientos desde 300€ para zonas localizadas. La inspeccion inicial es gratuita y sin compromiso.` },
+    )
+  } else if (serviceId.includes("avispa")) {
+    faqs.push(
+      { q: "Es peligroso quitar un nido de avispas?", a: "Si, muy peligroso sin equipo profesional. Las avispas atacan en grupo cuando se sienten amenazadas. Nunca intentes quitarlo tu mismo. Los exterminadores tienen trajes protectores y tecnicas seguras." },
+      { q: "Cuanto cuesta quitar un nido de avispas?", a: `En ${cityName}, la retirada de nidos de avispas cuesta entre 80€ y 150€ dependiendo de la ubicacion y el tamano. Servicio urgente disponible en menos de 2 horas.` },
+    )
+  } else if (serviceId.includes("hormiga")) {
+    faqs.push(
+      { q: "Por que vuelven las hormigas despues de limpiar?", a: "Las hormigas dejan rastros de feromonas que guian a otras. Limpiar elimina las visibles pero no el rastro ni el hormiguero. El tratamiento profesional con cebo elimina la colonia desde la raiz." },
+      { q: "Las hormigas con alas son peligrosas?", a: "Las hormigas con alas son reproductoras buscando crear nuevas colonias. No son mas peligrosas pero indican una colonia madura cerca. Es buen momento para actuar antes de que se expandan." },
+    )
+  } else if (serviceId.includes("pulga")) {
+    faqs.push(
+      { q: "Puedo tener pulgas sin tener mascota?", a: "Si. Las pulgas pueden venir de pisos anteriores, jardines, o animales callejeros. Sobreviven meses sin alimentarse esperando un huesped. El tratamiento profesional elimina pulgas en todas las fases." },
+      { q: "Cuanto tarda en eliminarse una plaga de pulgas?", a: `Con tratamiento profesional en ${cityName}, las pulgas adultas mueren en 24-48h. El ciclo completo de eliminacion tarda 2-3 semanas para eliminar huevos y larvas.` },
+    )
+  } else if (serviceId.includes("mosquito")) {
+    faqs.push(
+      { q: "Como eliminar mosquitos de forma permanente?", a: "Hay que eliminar los focos de cria: agua estancada en macetas, canalones, piscinas sin tratar. El tratamiento profesional incluye larvicida y adulticida para control completo." },
+      { q: "El mosquito tigre es mas peligroso?", a: `Si. El mosquito tigre pica de dia, es mas agresivo y puede transmitir enfermedades. En ${cityName} es importante actuar rapido si detectas su presencia.` },
+    )
+  } else if (serviceId.includes("paloma")) {
+    faqs.push(
+      { q: "Como ahuyentar palomas de forma permanente?", a: "Los metodos caseros (CDs, espantapajaros) no funcionan a largo plazo. Los sistemas profesionales incluyen pinchos, redes, y sistemas electricos que impiden el posado de forma permanente." },
+      { q: "Los excrementos de paloma son peligrosos?", a: "Si. Pueden transmitir enfermedades respiratorias y daniar fachadas por su acidez. La limpieza debe hacerse con proteccion y desinfeccion posterior." },
+    )
+  } else if (serviceId.includes("desinfec")) {
+    faqs.push(
+      { q: "Que incluye el certificado de desinfeccion?", a: `El certificado oficial incluye: datos del establecimiento, productos utilizados, fecha del tratamiento, firma del tecnico responsable y numero de registro de la empresa. Valido para inspecciones de sanidad en ${cityName}.` },
+      { q: "Cada cuanto hay que desinfectar un local?", a: "Depende del tipo de negocio. Restaurantes y bares: cada 3-6 meses. Oficinas: cada 6-12 meses. Guarderias y residencias: cada 3 meses. Te asesoramos segun normativa vigente." },
+    )
+  } else if (serviceId.includes("certificado")) {
+    faqs.push(
+      { q: "Que es un certificado DDD?", a: "DDD significa Desinsectacion, Desratizacion y Desinfeccion. Es el certificado oficial que acredita que un establecimiento ha sido tratado por una empresa autorizada. Obligatorio para hosteleria, alimentacion y otros sectores." },
+      { q: "En cuanto tiempo recibo el certificado?", a: `Certificados en 24-48 horas habiles. Servicio urgente disponible en ${cityName} para inspecciones inminentes. El certificado incluye informe detallado con todos los datos del establecimiento.` },
+      { q: "El certificado es valido para sanidad?", a: "Si. Todos nuestros certificados son emitidos por empresas registradas en el ROESB (Registro Oficial de Establecimientos y Servicios Biocidas) y son validos para cualquier inspeccion oficial." },
     )
   }
 

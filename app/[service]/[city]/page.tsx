@@ -23,6 +23,7 @@ const SERVICE_NAMES: Record<Service, { name: string; title: string; singular: st
   "control-mosquitos": { name: "Control de Mosquitos", title: "Control de Mosquitos", singular: "control de mosquitos" },
   "control-palomas": { name: "Control de Palomas", title: "Control de Palomas", singular: "control de palomas" },
   "desinfeccion": { name: "Desinfección", title: "Desinfección", singular: "desinfección" },
+  "certificado-control-plagas": { name: "Certificado Control Plagas", title: "Certificado Oficial de Control de Plagas", singular: "certificado de control de plagas" },
 }
 
 function parseServiceAndModifier(rawService: string): { serviceId: Service | null; modifier?: string } {

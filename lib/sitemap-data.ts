@@ -17,6 +17,7 @@ export const VALID_SERVICES = [
   "control-mosquitos",
   "control-palomas",
   "desinfeccion",
+  "certificado-control-plagas",
 ] as const;
 
 export type Service = typeof VALID_SERVICES[number];
@@ -140,6 +141,13 @@ export const PROBLEMS: Record<Service, readonly string[]> = {
     "desinfeccion-comunidad", "desinfectar-restaurante", "desinfectar-hotel",
     "desinfectar-guarderia", "desinfeccion-agua", "desinfeccion-conductos",
     "desinfeccion-sanitaria",
+  ],
+  "certificado-control-plagas": [
+    "certificado-desratizacion", "certificado-desinsectacion", "certificado-desinfeccion",
+    "certificado-sanidad", "certificado-ddd", "certificado-restaurante",
+    "certificado-bar", "certificado-hotel", "certificado-comunidad",
+    "certificado-guarderia", "certificado-residencia", "certificado-oficial",
+    "informe-control-plagas", "certificado-urgente", "certificado-24h",
   ],
 } as const;
 export const CITIES: readonly string[] = [
