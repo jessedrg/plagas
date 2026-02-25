@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* =============================================================================
+   plagas — Professional pest control brand
+   Clean. Authoritative. Urgent.
+   ============================================================================= */
+
+@theme inline {
+  --color-background: oklch(0.98 0.001 240);
+  --color-foreground: oklch(0.15 0.004 240);
+
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.15 0.004 240);
+
+  --color-primary: oklch(0.15 0.004 240);
+  --color-primary-foreground: oklch(0.98 0.001 240);
+
+  --color-secondary: oklch(0.945 0.004 240);
+  --color-secondary-foreground: oklch(0.15 0.004 240);
+
+  --color-muted: oklch(0.945 0.004 240);
+  --color-muted-foreground: oklch(0.48 0.008 240);
+
+  --color-accent: oklch(0.52 0.045 240);
+  --color-accent-foreground: oklch(0.98 0.001 240);
+
+  --color-border: oklch(0.905 0.004 240);
+  --color-input: oklch(0.905 0.004 240);
+  --color-ring: oklch(0.15 0.004 240);
+
+  --radius: 0.25rem;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
