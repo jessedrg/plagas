@@ -9,7 +9,7 @@ const WA_URL = "https://wa.me/34603389026?text=Hola%2C%20tengo%20un%20problema%2
 const PHONE = "+34603389026"
 
 const SERVICE_IMAGES: Record<string, string> = {
-  "desratizacion": "https://images.unsplash.com/photo-1548767797-d8c844163c4c?q=80&w=2071&auto=format&fit=crop",
+  "desratizacion": "https://images.unsplash.com/photo-1633331915190-fe4810c7da87?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "desinsectacion": "https://images.unsplash.com/photo-1636791013127-37effd526316?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "fumigacion": "https://images.unsplash.com/photo-1636791013127-37effd526316?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "control-cucarachas": "https://images.unsplash.com/photo-1701554193871-a605f56e3005?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -118,7 +118,7 @@ function generateReviews(cityName: string, serviceId: string) {
 
 function generateFAQs(cityName: string, serviceName: { title: string; singular: string }, serviceId: string) {
   const faqs = [
-    { q: `Cuanto cuesta ${serviceName.singular} en ${cityName}?`, a: `El precio de ${serviceName.singular} en ${cityName} depende de la superficie, el tipo de plaga y la gravedad. Como orientacion: tratamientos basicos desde 60€, tratamientos completos desde 120€. plagas te presenta presupuestos detallados de exterminadores certificados en ${cityName}. Escribenos por WhatsApp para orientacion gratuita.` },
+    { q: `Cuanto cuesta ${serviceName.singular} en ${cityName}?`, a: `El precio de ${serviceName.singular} en ${cityName} depende de la superficie, el tipo de plaga y la gravedad. plagas te presenta presupuestos detallados de exterminadores certificados en ${cityName}. Escribenos por WhatsApp para orientacion gratuita y sin compromiso.` },
     { q: `El servicio de plagas en ${cityName} tiene algun coste?`, a: `El asesoramiento de plagas es completamente gratuito. Conectamos con exterminadores certificados, te presentamos presupuestos y te acompanamos durante el tratamiento. Sin comisiones ni costes ocultos. Escribenos por WhatsApp sin compromiso.` },
     { q: `Cuanto tiempo tarda en eliminarse la plaga en ${cityName}?`, a: `Depende del tipo de plaga y la gravedad. Cucarachas: 1-2 semanas. Ratas: 2-4 semanas. Chinches: 2-3 semanas. Termitas: 1-3 meses. Los exterminadores que recomendamos en ${cityName} siempre dan un plazo cerrado antes de empezar.` },
   ]
@@ -141,12 +141,12 @@ function generateFAQs(cityName: string, serviceName: { title: string; singular: 
   } else if (serviceId.includes("termita") || serviceId.includes("carcoma")) {
     faqs.push(
       { q: "Como se si tengo termitas?", a: `Senales: pequenos agujeros en la madera, serrin fino cerca de muebles o vigas, madera que suena hueca al golpear, alas de termitas en ventanas. Si detectas alguna senal en ${cityName}, solicita inspeccion profesional urgente.` },
-      { q: "El tratamiento de termitas es caro?", a: `El precio depende de la extension de la plaga y el tipo de madera afectada. En ${cityName}, tratamientos desde 300€ para zonas localizadas. La inspeccion inicial es gratuita y sin compromiso.` },
+      { q: "El tratamiento de termitas es caro?", a: `El precio depende de la extension de la plaga y el tipo de madera afectada. Solicita presupuesto sin compromiso. La inspeccion inicial es gratuita.` },
     )
   } else if (serviceId.includes("avispa")) {
     faqs.push(
       { q: "Es peligroso quitar un nido de avispas?", a: "Si, muy peligroso sin equipo profesional. Las avispas atacan en grupo cuando se sienten amenazadas. Nunca intentes quitarlo tu mismo. Los exterminadores tienen trajes protectores y tecnicas seguras." },
-      { q: "Cuanto cuesta quitar un nido de avispas?", a: `En ${cityName}, la retirada de nidos de avispas cuesta entre 80€ y 150€ dependiendo de la ubicacion y el tamano. Servicio urgente disponible en menos de 2 horas.` },
+      { q: "Cuanto cuesta quitar un nido de avispas?", a: `El precio depende de la ubicacion y el tamano del nido. Solicita presupuesto sin compromiso. Servicio urgente disponible en menos de 2 horas.` },
     )
   } else if (serviceId.includes("hormiga")) {
     faqs.push(

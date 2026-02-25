@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react"
 const faqs = [
   {
     q: "Cuanto cuesta eliminar una plaga?",
-    a: "El precio depende del tipo de plaga, la superficie y la gravedad. Como orientacion: desratizacion desde 80€, cucarachas desde 60€, chinches desde 150€, termitas desde 300€. plagas te presenta presupuestos detallados de exterminadores certificados para que compares.",
+    a: "El precio depende del tipo de plaga, la superficie y la gravedad. plagas te presenta presupuestos detallados de exterminadores certificados para que compares. Escribenos por WhatsApp para orientacion gratuita.",
   },
   {
     q: "Cuanto tarda en eliminarse una plaga?",
