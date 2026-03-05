@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter, Cormorant_Garamond } from "next/font/google"
 import "./globals.css"
 import WhatsAppButton from "@/components/whatsapp-button"
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" })
 const cormorant = Cormorant_Garamond({ subsets: ["latin"], variable: "--font-serif", weight: ["300", "400", "500", "600"], display: "swap" })
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <WhatsAppButton />
+        <Analytics />
       </body>
     </html>
   )
